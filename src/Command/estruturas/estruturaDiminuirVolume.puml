@@ -1,0 +1,13 @@
+@startuml
+
+skinparam line ortho
+
+class DiminuirVolume {
+    - private tocador: Tocador;
+    - private nivel : int;
+
+    + DiminuirVolume(tocador: Tocador, nivel: int);
+    + executar(tocador : Tocador): String;
+}
+
+@enduml
