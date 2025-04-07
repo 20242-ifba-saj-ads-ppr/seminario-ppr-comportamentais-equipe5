@@ -1,0 +1,9 @@
+@startuml
+
+skinparam line ortho
+
+interface Comando {
+    + executar() : String;
+}
+
+@enduml
