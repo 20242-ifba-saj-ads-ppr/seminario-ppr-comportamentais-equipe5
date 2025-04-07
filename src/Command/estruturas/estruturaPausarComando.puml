@@ -1,0 +1,10 @@
+@startuml
+skinparam line ortho
+
+class PausarComando {
+  - tocador: TocadorDeMusica
+  + PausarComando(tocador: TocadorDeMusica)
+  + executar()
+}
+
+@enduml
