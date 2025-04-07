@@ -1,3 +1,4 @@
+package TemplateMethod;
 public class MageKobold {
 
     private SpellCasting spellCastingMethod;

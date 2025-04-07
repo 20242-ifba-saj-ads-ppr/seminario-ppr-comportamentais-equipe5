@@ -1,3 +1,4 @@
+package TemplateMethod;
 public class InvisibilitySpell extends SpellCasting {
 
     @Override

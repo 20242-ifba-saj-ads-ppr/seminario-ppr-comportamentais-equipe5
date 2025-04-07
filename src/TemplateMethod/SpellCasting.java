@@ -1,3 +1,4 @@
+package TemplateMethod;
 public abstract class SpellCasting {
 
   protected abstract String chooseSpell();

@@ -1,3 +1,4 @@
+package TemplateMethod;
 public class FireBallSpell extends SpellCasting {
 
     @Override
