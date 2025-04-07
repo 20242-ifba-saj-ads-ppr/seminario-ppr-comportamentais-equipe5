@@ -1,0 +1,23 @@
+@startuml
+skinparam line ortho
+
+class AumentarVolume {
+  - tocador: Tocador
+  + realizarAumento();
+}
+
+class DiminuirVolume {
+  - tocador: Tocador
+  + realizarDiminuicao();
+}
+
+class TocadorDeMusica {
+  + tocar();
+  + AumentarVolume();
+  + DiminuirVolume();
+}
+
+TocadorDeMusica <-- AumentarVolume : "AumentarVolume"
+TocadorDeMusica <-- DiminuirVolume : "DiminuirVolume"
+
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+skinparam line ortho
+!include ./src/Command/estruturas/estruturaAumentarVolume.puml
+!include ./src/Command/estruturas/estruturaDiminuirVolume.puml
+!include ./src/Command/estruturas/estruturaTocador.puml
+!include ./src/Command/estruturas/estruturaTocaMusicaComando.puml
+!include ./src/Command/estruturas/estruturaListaDeComandos.puml
+!include ./src/Command/estruturas/estruturaPausarComando.puml
+!include ./src/Command/estruturas/estruturaComando.puml
+
+Comando <|-- TocaMusicaComando
+Comando <|-- PausarComando
+Comando <|-- AumentarVolume
+Comando <|-- DiminuirVolume
+
+Tocador o-- TocaMusicaComando
+Tocador o-- PausarComando
+Tocador o-- AumentarVolume
+Tocador o-- DiminuirVolume
+
+
+@enduml
