@@ -1,0 +1,15 @@
+@startuml
+
+skinparam line ortho
+
+class ListaDeComandos {
+    - private static instance : ListaDeComandos;
+    - private comandos : List<Comando>;
+
+    + private ListaDeComandos();
+    + static getInstance() : ListaDeComandos; 
+    + adicionarComando(comando: Comando) : void;
+    + executarComandos(tocador: Tocador) : void;
+}
+
+@enduml
