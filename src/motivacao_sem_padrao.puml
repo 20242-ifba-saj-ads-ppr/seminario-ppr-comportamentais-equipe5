@@ -1,28 +1,25 @@
 @startuml
-class Personagem {
-  -List<Item> itens
-  +equipar(item)
-}
-class Item {
-  -int dano
-  -int tamanho
-  +aplicar(personagem)
-}
-class Arco extends Item {
-}
-class Laser extends Item {
-}
-class Faca extends Item {
-}
-class ArcoComFaca extends Arco, Faca  {
-}
-class ArcoComLaser extends Arco, Laser  {
-}
-class FacaComLaser extends Faca, Laser  {
-}
-class FacaComLaserComArco extends Faca, Laser,Arco  {
+class FireSpellNoTemplate {
+    +prepareSpell()
+    +chooseSpell()
+    +gatherIngredients(spell)
+    +castSpell(spell)
 }
 
-Personagem "1" -> "*" Item 
-FacaComLaser --[hidden] FacaComLaserComArco
+class InvisibilitySpellNoTemplate {
+    +prepareSpell()
+    +chooseSpell()
+    +gatherIngredients(spell)
+    +castSpell(spell)
+}
+
+class MageKoboldNoTemplate {
+    -spellCastingMethod
+    +prepareSpell()
+    +changespellCastingMethod(spellCastingMethod)
+    +main(args: String[])
+}
+
+MageKoboldNoTemplate --> FireSpellNoTemplate
+MageKoboldNoTemplate --> InvisibilitySpellNoTemplate
 @enduml

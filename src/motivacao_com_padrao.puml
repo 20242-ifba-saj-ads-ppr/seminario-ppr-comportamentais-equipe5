@@ -1,19 +1,30 @@
 @startuml
-abstract class Item {
-  + {abstract} aplicar(personagem)
-}
-class Arco extends Item {
-  + aplicar(personagem)
-}
-class ItemDecorator extends Item {
-  - item: Item
-  ItemDecorator (item: Item)
-  + aplicar(personagem)
+abstract class SpellCasting {
+    +prepareSpell()
+    -chooseSpell()
+    -gatherIngredients(spell)
+    -castSpell(spell)
 }
 
-ItemDecorator -o Item
+class FireSpell {
+    +chooseSpell()
+    +gatherIngredients(spell)
+    +castSpell(spell)
+}
 
-ItemDecorator <|-- Laser 
-ItemDecorator <|-- Faca 
+class InvisibilitySpell {
+    +chooseSpell()
+    +gatherIngredients(spell)
+    +castSpell(spell)
+}
 
+class MageKobold {
+    -spellCastingMethod: SpellCasting
+    +prepareSpell()
+    +changespellCastingMethod(spellCastingMethod: SpellCasting)
+}
+
+SpellCasting <|-- FireSpell
+SpellCasting <|-- InvisibilitySpell
+MageKobold --> SpellCasting
 @enduml

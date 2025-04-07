@@ -1,37 +1,20 @@
 @startuml
-skinparam linetype ortho
-
-
-abstract class Component {
-  + {abstract} operation(): void
-}
-class ConcreteComponent extends Component { 
-  + operation(): void
-}
-class Decorator extends Component{
-  - component: Component
-  + operation(): void
+abstract class AbstractClass {
+    +templateMethod()
+    -primitiveOperation1()
+    -primitiveOperation2()
 }
 
-class ConcreteDecoratorA extends Decorator {
-  + operation(): void
-  + addedState: string
-}
-class ConcreteDecoratorB extends Decorator {
-  + operation(): void
-  + addedBehavior(): void
+class ConcreteClassA {
+    +primitiveOperation1()
+    +primitiveOperation2()
 }
 
-Decorator o-> Component
-ConcreteComponent -[hidden] Decorator
-ConcreteDecoratorA -[hidden] ConcreteDecoratorB
+class ConcreteClassB {
+    +primitiveOperation1()
+    +primitiveOperation2()
+}
 
-note right of Decorator::component
-  component.operation()
-end note
-
-note right of ConcreteDecoratorB::operation
-  addedBehavior()
-end note
-
+AbstractClass <|-- ConcreteClassA
+AbstractClass <|-- ConcreteClassB
 @enduml
