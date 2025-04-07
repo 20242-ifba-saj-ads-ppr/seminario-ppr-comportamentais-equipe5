@@ -1,0 +1,11 @@
+@startuml
+skinparam line ortho
+
+class TocaMusicaComando {
+  - tocador: Tocador
+  - fileName: String
+  + TocaMusicaComando(tocador: Tocador, fileName: String)
+  + executar(): void
+}
+
+@enduml
