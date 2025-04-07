@@ -1,0 +1,14 @@
+@startuml
+skinparam line ortho
+
+class Tocador {
+  - static tocador: Tocador
+  - Tocador()
+  + static getInstance(): Tocador
+  + tocar(fileName: String): String
+  + pausar(fileName: String): String
+  + aumentarVolume(nivel: int): String
+  + diminuirVolume(nivel: int): String
+}
+
+@enduml
