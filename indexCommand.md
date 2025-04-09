@@ -70,13 +70,13 @@ e suportar operações que podem ser desfeitas.
 
   [^K19] (adaptado)
 
-- Command (Comando): Define uma interface para a execução dos métodos do Tocador.
+- Command (Comando): Define uma interface para a execução dos métodos do Tocador e implementação dos ConcretsCommands.
   
 - ConcreteCommand (TocaMusicaComando, Pausa Comando, AumentarVolumeComando, DiminuirVolumeComando): Classe que implementa Command e modela uma operação específica do Tocador.
   
 - Invoker (ListaDeComandos): Classe que armazena os Commands que devem ser executados.
 
-- Receiver (Tocador): Define os objetos que terão as chamadas aos seus métodos controladas.
+- Receiver (Tocador): Define os metodos que serão chamados pelas instancias das ações.
 
 - Client (TestaListaDeComandos): Instancia os Commands associando-os ao Receiver e armazena-os no Invoker.
 
