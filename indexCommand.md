@@ -11,13 +11,13 @@ e suportar operações que podem ser desfeitas.
 
 - Action, Transaction [^GAMMA].
 
-- Comando, Ação, Action, Transação, Transaction. [^SHEVETS]
+- Comando, Ação, Action, Transação, Transaction [^SHEVETS]. 
 
 ## Motivação
 
 [^K19] (Adaptado)
 
-- Considere que o cenário em que é preciso construir um tocador de musica com as funcionalidades: Tocar, Pausar, Aumentar Volume, Diminuir Volume. No entanto, nesse cenário é preciso resolver problemas de flexibilidade e manuntenção.
+- Considere o cenário em que é preciso construir um tocador de musica com as funcionalidades: Tocar, Pausar, Aumentar Volume, Diminuir Volume. No entanto, nesse cenário é preciso resolver problemas de flexibilidade e manuntenção.
 
 ### Sem o Padrão Command
 
@@ -35,7 +35,7 @@ e suportar operações que podem ser desfeitas.
 
 </figure>
 
-- Nesse cenário, podemos inferir que, há pouca flexibilidade, em que, se for preciso modificar diretamente a classe TocadorDeMusica e as ações de Aumentar e Dimiuir musica.
+- Nesse cenário, podemos inferir que, há pouca flexibilidade, em que, se necessario modificar as ações de aumentar ou diminuir o volume, seria preciso alterar diretamente a classe TocadorDeMusica, o que aumenta o acoplamento e dificulta a manuntenção.
 
 - Alem disso, seria complexo implementar o historico de ações para desfazer o Aumento / Diminuição da musica.
 
@@ -57,9 +57,9 @@ e suportar operações que podem ser desfeitas.
 
 - Isso Garante: 
 
-  - Desacoplamento: A ações são estabelecidas de forma declarativa - sem saber o passo a passo. Apenas é disparado os comandos
+  - Desacoplamento: A ações são estabelecidas de forma declarativa - sem saber o passo a passo. Apenas é disparado os comandos. Nesse sentido, o Involker não precisa conhecer os detalhes de implementação do Receiver.
   
-  - Flexibilidade: Novas funcionalides podem ser adicionadas criando novos comandos.
+  - Flexibilidade: Novas funcionalides podem ser adicionadas criando novos comandos (como por exemplo, PararMusica).
 
   - Historico e Desfazer: Com cada ação encapsulada em um objeto, é possivel armazenar um historico dos comandos e implementar a funcionalidade em caso de recuperar um estado.
 
