@@ -3,7 +3,7 @@
 ## Intenção 
 
 [^GAMA]
-- Encapsular uma solicitação como um objeto, desta forma permitindo parametrizar
+- Encapsular uma solicitação como um objeto, permitindo parametrizar
 clientes com diferentes solicitações, enfileirar ou fazer o registro (log) de solicitações
 e suportar operações que podem ser desfeitas.
 
